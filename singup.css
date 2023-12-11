@@ -1,0 +1,184 @@
+
+
+@font-face{
+    font-family: tree;
+    src: url(PlantsLetters.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    color: #fff;
+}
+*::Selection{
+    background-color: #99f699;
+    color: #fff;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding-top: 10px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    z-index: 99;
+
+}
+
+#cursor{
+    height: 25px;
+    width: 25px;
+    background-color: #90f190;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 999;
+    opacity: 0.9;
+}
+
+#plantlogo #plantomainya{
+    font-family: tree;
+    background: linear-gradient(to right,green, #5353e3, #423a3a, #fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 1;
+}
+#links .l{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+#plantlogo{
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+
+#plantlogo #logo{
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    font-size: 40px;
+    font-weight: 500;
+    background: linear-gradient(to bottom right,rgb(109, 228, 109), #7878ec, #f647b0, #fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+#plantlogo h1{
+    font-size: 25px;
+    font-weight: 500;
+}
+.l a{
+    text-decoration: none;
+    margin-left: 3px;
+}
+
+#main{
+    min-height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.33);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(singupimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Form_con{
+    position: relative;
+    height: 500px;
+    width: 400px;
+    background: transparent;
+    border: 2px solid #c9bebe;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color: #fff;
+    font-size: 2em;
+    text-align: center;
+}
+.input_box{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+
+}
+.input_box .txt{
+    font-size: 20px;
+    color: #fff;
+}
+.input_box label{
+    position: absolute;
+    color: black;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+    font-size: 17px;
+}
+.input_box input{
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.input_box ion-icon{
+    position: absolute;
+    right: 8px;
+    color: #fff;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #2ff581, #63f52f, #3ff52f, #2ff581);
+}
+.register{
+    text-align: left;
+    color: white;
+    margin-top: 20px;
+}
+.register p a{
+    padding-left: 5px;
+    text-decoration: none;
+    color: #b907b9;
+}
+.register p a:active{
+    color: #d58dd5;
+}

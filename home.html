@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plantomaniya-Understand the nature of plant</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+<div id="cursor"></div>
+      <div id="nav">
+        <div id="plantlogo">
+          <i id="logo" class="ri-plant-line"></i>
+          <h1 id="plantomainya">Plantomaniya</h1>
+        </div>
+        <div id="links">
+          <div class="l"><i class="ri-home-2-fill"></i><a href="home.html">home</a></div>
+                <div class="l"><i class="ri-shopping-cart-2-fill"></i><a href="https://www.ugaoo.com/collections/plants">shop</a></div>
+                <div class="l"><i class="ri-search-eye-line"></i><a href="About.html">About</a></div>
+                <div class="l"><i class="ri-phone-fill"></i><a href="contact.html">contact</a></div>
+                <div class="l"><i class="ri-user-fill"></i><a href="profile.html">profile</a></div>
+        </div>
+      </div>
+      <img id="bg" src="IMG_20230923_144450574.jpg" alt="">
+
+      <div id="main">
+        <h1>Welcome to Plantomaniya</h1>
+
+        <div id="searchPanel">
+            <input type="text" id="search" placeholder="SEARCH ANY PLANT">
+            <button id="btnSearch"><i class="ri-search-eye-line"></i></button>
+        </div>
+        <div id="introout">
+            <div id="intro">
+              <div id="intro1">
+                <h2>Explore plants, flowers,
+                  weeds and more</h2>
+                <h3>There are roughly 400,000 known species of plants on planet Earth, of which the great majority, some 300,000 species, produce seeds.</h3>
+                <h3>Green plants provide a substantial proportion of the world’s molecular oxygen, and are the basis of most of Earth’s ecosystems.</h3>
+                <h3>Plants that produce grain, fruit, and vegetables also form basic human foods and have been domesticated for millennia.</h3>
+                <h3>Plants have many cultural and other uses, as ornaments, building materials, writing material and, in great variety, they have been the source of medicines and psychoactive drugs.</h3>
+              </div>
+              <div id="introimg">
+                  <img src="IMG_20230923_151229381.jpg">
+                  <img src="intro1.jpg">
+                  <img src="intro2.jpg">
+              </div>
+            </div>
+          </div>
+
+        <div id="plantinfo">
+          <div class="plant">
+            <img src="alvora.jpg" alt="">
+              <h3 class="plantName">Aleo vera</h3>
+              <h3>Scientific Name:<span></span></h3>
+              <h3>Description:<span></span></h3>
+          </div>
+        </div>
+
+        <div id="bottom">
+          <h1>Be Our Part Know about many plants</h1>
+          <div id="button">
+            <a href="singup.html">Sign Up</a>
+            <a href="login.html">Sign In</a>
+          </div>
+        </div>
+      </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="home.js"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAUcHaY5PnSuVjaicVm2T6rlchiKqYb5L8",
+    authDomain: "image-info-f082b.firebaseapp.com",
+    projectId: "image-info-f082b",
+    storageBucket: "image-info-f082b.appspot.com",
+    messagingSenderId: "435731732163",
+    appId: "1:435731732163:web:ddfc0cb8329f1e44b67476"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  const db = firebase.firestore();
+
+// Reference to the collection you want to retrieve data from
+const collectionRef = db.collection('plantInfo');
+
+// Query the collection
+collectionRef.get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      // doc.data() is the document's data as an object
+      console.log(doc.id, " => ", doc.data());
+    });
+  })
+  .catch((error) => {
+    console.error("Error getting documents: ", error);
+  });
+</script>
+</body>
+</html>

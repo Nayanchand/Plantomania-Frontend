@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+@font-face{
+    font-family: tree;
+    src: url(PlantsLetters.ttf);
+}
+*{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-family: poppins;
+}
+*::Selection{
+    background-color: #99f699;
+    color: #fff;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+img{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: -99;
+    position: fixed;
+}
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding-top: 10px;
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    z-index: 99;
+
+}
+
+#main{
+    min-height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.33);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#cursor{
+    height: 25px;
+    width: 25px;
+    background-color: #90f190;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 999;
+    opacity: 0.9;
+}
+
+#plantlogo #plantomainya{
+    font-family: tree;
+    background: linear-gradient(to right,green, #5353e3, #423a3a, #fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 1;
+}
+#links .l{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+#plantlogo{
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+
+#plantlogo #logo{
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    font-size: 40px;
+    font-weight: 500;
+    background: linear-gradient(to bottom right,rgb(109, 228, 109), #7878ec, #f647b0, #fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+#plantlogo h1{
+    font-size: 25px;
+    font-weight: 500;
+}
+.l a{
+    text-decoration: none;
+    margin-left: 3px;
+}
+
+#searchPanel{
+    width: 100%;
+    display: block;
+    margin-left: 30%;
+    margin-top: 15%;
+}
+#search{
+    height: 40px;
+    width: 40%;
+    margin: 0px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding-left: 10px;
+}
+
+#btnSearch{
+    height: 40px;
+    width: 3%;
+    margin: 0px;
+    background: linear-gradient(to right, #c4baba, #6de76d);
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+#plantinfo{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#introout{
+    margin: 50px;
+}
+
+#main h1{
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 0;
+    font-size: 3em;
+    font-family: tree;
+    background: linear-gradient(to bottom right,rgb(177, 65, 228), #7979eb, rgb(20, 231, 66), white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: 1;
+}
+#intro1{
+    padding-left: 20px;
+}
+#intro1 h2{
+    color: blueviolet
+}
+#intro1 h3{
+    margin-top: 20px;
+}
+
+#intro{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#intro #intro1{
+    width: 500px;
+}
+#intro #introimg{
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#introimg img{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    position: relative;
+}
+
+#plantinfo{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#plantinfo .plant{
+    height: 500px;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#plantinfo .plant img{
+    height: 200px;
+    width: 80%;
+    object-fit: cover;
+    object-position: center;
+    margin: 45px;
+    border-radius: 10px;
+    position: inherit;
+    z-index: 70;
+}
+
+#plantinfo .plant h3{
+    color: purple;
+    margin: 5px;
+}
+
+#plantinfo .plant h3 span{
+    color: purple;
+    font-weight: 400;
+    word-spacing: 2px;
+}
+
+#plantinfo .plant .plantName{
+    text-align: center;
+    margin-top: -5px;
+}
+
+#bottom{
+    width: 100%;
+    height: 200px;
+}
+
+#bottom h1{
+    font-weight: 200;
+    font-size: 2em;
+}
+
+#bottom #button{
+    margin-top: 50px;
+    margin-left: 40%;
+}
+
+#bottom #button a{
+
+    font-size: 2rem;
+    padding: 25px;
+    border-radius: 15px;
+    margin-left: 10px;
+    text-decoration: none;
+    background: linear-gradient(to bottom right, rgb(77, 243, 77), rgb(106, 106, 241), rgb(247, 247, 73), white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    border: 2px solid white;
+}
+
+#bottom #button a:hover{
+    color: purple;
+    background: linear-gradient(to bottom right, rgb(77, 243, 77), rgb(106, 106, 241), rgb(247, 247, 73), white);
+    transition: ease 0.3s;
+}

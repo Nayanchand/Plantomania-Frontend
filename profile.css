@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+@font-face{
+    font-family: tree;
+    src: url(PlantsLetters.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    color: #fff;
+}
+*::Selection{
+    background-color: #99f699;
+    color: #fff;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding-top: 10px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    z-index: 99;
+
+}
+
+#cursor{
+    height: 25px;
+    width: 25px;
+    background-color: #90f190;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 999;
+    opacity: 0.9;
+}
+
+#plantlogo #plantomainya{
+    font-family: tree;
+    background: linear-gradient(to right,green, #5353e3, #423a3a, #fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 1;
+}
+#links .l{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+#plantlogo{
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+
+#plantlogo #logo{
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    font-size: 40px;
+    font-weight: 500;
+    background: linear-gradient(to bottom right,rgb(109, 228, 109), #7878ec, #f647b0, #fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+#plantlogo h1{
+    font-size: 25px;
+    font-weight: 500;
+}
+.l a{
+    text-decoration: none;
+    margin-left: 3px;
+}
+
+#container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.profile-card {
+    text-align: center;
+    background: linear-gradient(to bottom right,rgb(127, 245, 127),rgb(131, 131, 215),#fff,rgb(215, 233, 54));
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 50%;
+    height: 50vh;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.image-container #username{
+    color: violet;
+}
+
+#profile-image {
+    width: 40%;
+    height: 40vh;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: violet;
+}
+
+.image-container #username{
+    font-size: 50px;
+    font-weight: 700;
+    padding: 20px;
+}
+
+#image-upload {
+    display: none;
+    position: absolute;
+}
+
+h2 {
+    margin-top: 20px;
+}

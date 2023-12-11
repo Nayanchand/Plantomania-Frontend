@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantomanya Login</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="singup.css">
+</head>
+<body>
+    <div id="cursor"></div>
+    <div id="nav">
+        <div id="plantlogo">
+            <i id="logo" class="ri-plant-line"></i>
+            <h1 id="plantomainya">Plantomaniya</h1>
+        </div>
+        <div id="links">
+            <div class="l"><i class="ri-home-2-fill"></i><a href="home.html">home</a></div>
+                <div class="l"><i class="ri-shopping-cart-2-fill"></i><a href="https://www.ugaoo.com/collections/plants">shop</a></div>
+                <div class="l"><i class="ri-search-eye-line"></i><a href="About.html">About</a></div>
+                <div class="l"><i class="ri-phone-fill"></i><a href="contact.html">contact</a></div>
+                <div class="l"><i class="ri-user-fill"></i><a href="profile.html">profile</a></div>
+        </div>
+    </div>
+    <section id="#main">
+        <div class="Form_con">
+            <div class="Form_IN">
+                <form action="" id="loginForm">
+                    <h2>Sign Up</h2>
+                    <div class="input_box">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="text" id="username" class="txt" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="input_box">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="text" id="email" class="txt" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input_box">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" id="pwd" class="txt" required>
+                        <label for="pwd">Password</label>
+                    </div>
+                    <button id="signUp">Sign Up</button>
+                    <div class="register">
+                        <p>Already have an account <a href="login.html">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAdAocOjG5G9AFVNoo8ky9tGq3KMFv1VoU",
+          authDomain: "login-page-ea132.firebaseapp.com",
+          databaseURL: "https://login-page-ea132-default-rtdb.firebaseio.com",
+          projectId: "login-page-ea132",
+          storageBucket: "login-page-ea132.appspot.com",
+          messagingSenderId: "306497617927",
+          appId: "1:306497617927:web:63070217b0a82541936aa2",
+          measurementId: "G-DQDCSNJDNZ"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase();
+        const auth = getAuth(app);
+    
+        let userName = document.querySelector('#username');
+        let email = document.querySelector('#email');
+        let pwd = document.querySelector('#pwd');
+        let supbtn = document.querySelector('#signUp');
+
+        let register = evt =>{
+        evt.preventDefault();
+
+        createUserWithEmailAndPassword(auth, email.value, pwd.value)
+        .then((cred)=>{
+            set(ref(database, 'UsersAuthList/' + cred.user.uid),{
+                UserName : userName.value,
+            })
+        
+        })
+        .catch((error)=>{
+            alert(error.message);
+            console.log(error.code);
+            console.log(error.message);
+        })
+    }
+
+    supbtn.addEventListener('click', register);
+
+    </script>
+    
+    <script src="singup.js"></script>
+</body>
+</html>
